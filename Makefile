@@ -32,10 +32,10 @@ obj/app.html: objdir src/app.html
 	cp {src,obj}/app.html
 
 obj/app.pack.html: obj/app.min.js obj/boot.min.js obj/app.html
-	scripts/include.awk -v minimized=true < obj/app.html > obj/app.pack.html
+	./pack.awk -v minimized=true < obj/app.html > obj/app.pack.html
 
 obj/app.debug.pack.html: obj/app.js obj/boot.js obj/app.html obj/test-interop.js
-	scripts/include.awk < obj/app.html > obj/app.debug.pack.html
+	./pack.awk < obj/app.html > obj/app.debug.pack.html
 
 obj/test-interop.js: src/test-interop.js
 	cp {src,obj}/test-interop.js
