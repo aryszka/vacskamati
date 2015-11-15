@@ -2,7 +2,7 @@ include config.mk
 
 default: build
 
-.PHONY: clean
+.PHONY: clean npmclean elmclean npm
 
 build: obj/app.pack.html
 
@@ -10,6 +10,9 @@ dist: distdir obj/app.pack.html
 	cp obj/app.pack.html dist/index.html
 
 debug: obj/app.debug.pack.html
+
+test:
+	echo testing
 
 clean:
 	rm -rf obj dist

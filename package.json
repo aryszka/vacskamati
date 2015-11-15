@@ -1,7 +1,7 @@
 {
-  "name": "vacskamati",
+  "name": "Vacskamati",
   "version": "0.0.0",
-  "description": "(this is not an npm package, just using to download uglifyjs)",
+  "description": "(This is not an npm package, it's only used to download uglifyjs.)",
   "main": "dist/index.html",
   "dependencies": {},
   "devDependencies": {
@@ -21,8 +21,8 @@
     "many",
     "things"
   ],
-  "author": "Arpad Ryszka",
-  "license": "BSD-2-Clause",
+  "author": "Just another friend of Mikkamakka.",
+  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/aryszka/vacskamati/issues"
   },

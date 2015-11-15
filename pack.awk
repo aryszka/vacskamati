@@ -1,24 +1,30 @@
 #! /usr/bin/awk -f
 
 BEGIN {
-    placeholder="^.*{#\\s*\\S*\\s*#}.*$";
+    placeholder = "^.*{#\\s*\\S\\S*\\s*#}.*$"
+    beforeopen  = "^.*{#\\s*"
+    afteropen   = "{#.*$"
+    beforeclose = "^.*#}"
+    afterclose  = "\\s*#}.*$"
+    ext         = "([.]js)|([.]elm)$"
+
     min = ""
-    if (minimized=="true") {
+    if (minimized == "true") {
         min = ".min"
     }
 }
 
 $0 ~ placeholder {
-    open = gensub(/{#.*$/, "", 1, $0)
-    closer = gensub(/^.*#}/, "", 1, $0)
+    opentag  = gensub(afteropen, "", 1, $0)
+    closetag = gensub(beforeclose, "", 1, $0)
 
-    name = gensub(/^.*{#\s*/, "", 1, $0)
-    name = gensub(/\s*#}.*$/, "", 1, name)
-    name = gensub(/([.]js)|([.]elm)$/, min ".js", 1, name)
+    name = gensub(beforeopen, "", 1, $0)
+    name = gensub(afterclose, "", 1, name)
+    name = gensub(ext, min ".js", 1, name)
 
-    print open
+    print opentag
     system("cat obj/" name)
-    print closer
+    print closetag
 }
 
 $0 !~ placeholder { print }
