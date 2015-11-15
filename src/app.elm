@@ -1,3 +1,5 @@
+module App where
+
 import Html exposing (text)
 
 main : Html.Html

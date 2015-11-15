@@ -1,9 +1,17 @@
 #! /usr/bin/awk -f
 
-{placeholder="^\\s*{# .* #}\\s*$"}
+{
+    placeholder="^\\s*{# .* #}\\s*$";
+    min=""
+}
 
 $0 ~ placeholder {
-    name=gensub(/([.]js)|([.]elm)$/, ".min.js", 1, $2)
+    min = ""
+    if (minimized=="true") {
+        min = ".min"
+    }
+    
+    name=gensub(/([.]js)|([.]elm)$/, "$min.js", 1, $2)
     system("cat obj/" name)
 }
 
