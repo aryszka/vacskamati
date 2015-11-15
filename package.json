@@ -1,0 +1,30 @@
+{
+  "name": "vacskamati",
+  "version": "0.0.0",
+  "description": "(this is not an npm package, just using to download uglifyjs)",
+  "main": "dist/index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "uglify-js": "^2.6.0"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryszka/vacskamati.git"
+  },
+  "keywords": [
+    "unintended",
+    "usage",
+    "of",
+    "many",
+    "things"
+  ],
+  "author": "Arpad Ryszka",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/aryszka/vacskamati/issues"
+  },
+  "homepage": "https://github.com/aryszka/vacskamati#readme"
+}
