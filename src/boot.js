@@ -3,6 +3,6 @@
 
     window.addEventListener("load", function () {
         var root = document.getElementsByClassName("app-root")[0];
-        Elm.embed(Elm.App, root);
+        window.vacskamati = Elm.embed(Elm.App, root, {testIn: 0});
     });
 })();
