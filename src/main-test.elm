@@ -4,7 +4,6 @@ import ElmTest.Test exposing (..)
 import ElmTest.Runner.Console exposing (runDisplay)
 import IO.IO exposing (..)
 import IO.Runner exposing (Request, Response, run)
-
 -- [placeholder] test-imports.elm
 
 console : IO ()
@@ -17,5 +16,5 @@ port responses : Signal Response
 
 tests : Test
 tests = suite "UI" [
--- [placeholder] test-cases.elm
+    -- [placeholder] test-cases.elm
     ]

@@ -1,7 +1,7 @@
 #! /usr/bin/awk -f
 
 BEGIN {
-    placeholder = "^--\\s*\\[placeholder\\]\\s*"
+    placeholder = "^\\s*--\\s*\\[placeholder\\]\\s*"
 }
 
 $0 ~ placeholder {
