@@ -10,10 +10,12 @@ BEGIN {
 
 $0 ~ placeholder {
     open = gensub(/{#.*$/, "", 1, $0)
-    name = gensub(/^.*{#\\s*/, "", 1, $0)
-    name = gensub(/\\s*#}.*$/, "", 1, $0)
-    name = gensub(/([.]js)|([.]elm)$/, min ".js", 1, $2)
     closer = gensub(/^.*#}/, "", 1, $0)
+
+    name = gensub(/^.*{#\s*/, "", 1, $0)
+    name = gensub(/\s*#}.*$/, "", 1, name)
+    name = gensub(/([.]js)|([.]elm)$/, min ".js", 1, name)
+
     print open
     system("cat obj/" name)
     print closer
