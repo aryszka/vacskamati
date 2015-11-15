@@ -23,7 +23,11 @@ $0 ~ placeholder {
     name = gensub(ext, min ".js", 1, name)
 
     print opentag
-    system("cat obj/" name)
+    rt = system("cat obj/" name)
+    if (rt != 0) {
+        exit rt
+    }
+
     print closetag
 }
 

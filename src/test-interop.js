@@ -10,7 +10,8 @@
             return;
         }
 
-        const [ti, to] = [vm.ports.testIn, vm.ports.testOut];
+        const ti = vm.ports.testIn;
+        const to = vm.ports.testOut;
 
         var initial = 0;
         const send = () => ti.send(initial++);

@@ -1,10 +1,8 @@
-module App where
+module Main where
 
 import Html exposing (text)
 import Signal
-
-double : Int -> Int
-double x = x + x
+import Double exposing (double)
 
 port testOut : Signal Int
 port testOut = Signal.map double testIn
