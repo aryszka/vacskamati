@@ -1,8 +1,6 @@
 #! /usr/bin/awk -f
 
-BEGIN {
-    placeholder = "^\\s*--\\s*\\[placeholder\\]\\s*"
-}
+BEGIN { placeholder = "^\\s*--\\s*\\[placeholder\\]\\s*" }
 
 $0 ~ placeholder {
     name = gensub(placeholder, "", 1, $0)

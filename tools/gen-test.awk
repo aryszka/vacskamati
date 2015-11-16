@@ -1,8 +1,6 @@
 #! /usr/bin/awk -f
 
-BEGIN {
-    first = 0
-}
+BEGIN { first = 0 }
 
 {
     name = gensub(".*/", "", 1, $0)
